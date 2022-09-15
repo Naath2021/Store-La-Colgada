@@ -1,0 +1,13 @@
+
+.card-container{
+    .card{
+        width: 500px;
+        margin: 30px;
+        .card-title{
+            font-weight: 600;
+        }
+        .card-img-top{
+            height:fit-content;
+        }
+    }
+}

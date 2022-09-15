@@ -1,0 +1,14 @@
+
+.page-container{
+    background-color: $bg-color;
+    .product-page-welcoming{
+        height: 100vh;
+        background-image: url("../../../assets/image/backgrounds/products.png");
+        background-size: cover;
+        background-position: bottom;
+        h1{
+            text-align: center;
+            padding-top: 30vh;
+        }
+    }
+}

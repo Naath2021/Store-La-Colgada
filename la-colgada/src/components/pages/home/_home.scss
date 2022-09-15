@@ -1,0 +1,31 @@
+
+.sections-container {
+    .home-welcoming-and-info {
+      .bg-img,
+      .brand-info-img {
+        @include bg-image;
+      }
+    }
+  .home-product-link {
+    padding-left: 100px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("../../../assets/image/backgrounds/only-pair-white-pots.png");
+    @include bg-fixed;
+    .section-title {
+      font-size: 80px;
+      color: $bg-color;
+      padding: 0 0 20px 0;
+    }
+    .section-description {
+      width: 20vw;
+      font-size: 30px;
+      color: $bg-color;
+      text-align: left;
+      padding: 0 0 20px 0;
+    }
+  }
+}
