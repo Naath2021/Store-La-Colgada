@@ -5,31 +5,27 @@ import { useEffect, useState } from "react"
 import ProductDetail from './ProductDetail';
 import ProductsMock from '../../../products/ProductsMock';
 
-
-
 const ProductDetailContainer = () => {
 
-    const { index } = useParams();
+    const { id } = useParams();
 
     const [productInfo, setProductInfo] = useState([]);
 
-    
     const getProductInfo = new Promise((resolve) => {
         setTimeout(() => {
-            resolve(ProductsMock)
-        }, 2000)
+            resolve(ProductsMock.filter((item) => item.id == id))
+        }, 1000)
     })
-    
+
     useEffect(() => {
         getProductInfo.then((response) => {
             setProductInfo(response)
         })
-    })
+    }, [id])
 
-    console.log("que se sho  " + index)
     return (
         <div>
-            <ProductDetail item={productInfo} />
+            {productInfo && <ProductDetail item={productInfo[0]} />}
         </div>
     )
 }
