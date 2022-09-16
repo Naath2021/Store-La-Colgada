@@ -1,51 +1,50 @@
+import Carousel from 'react-bootstrap/Carousel'
+import Counter from '../../../counter/Counter';
 
-import React from 'react'
-//import Counter from '../../counter/Counter'
-//import { AddToCart } from '../../buttons/buttons'
-// import Navbar from "../../../navbar/Navbar"
+function ProductDetail({ item }) {
+    return (
+        <>
+            <div className='item-container'>
+                <div className='item-img' >
+                    <Carousel fade>
+                        <Carousel.Item>
+                            <img
+                                className="d-block carr-img"
+                                src={item[0].image1}
+                                alt={item[0].name}
+                            />
+
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block carr-img"
+                                src={item[0].image2}
+                                alt={item[0].name}
+                            />
 
 
-const ProductDetail = ({ item }) => {
-  return (
-    //   <div>
-    //     <div className='detail-img'>
-    //       <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
-    //         <div className="carousel-inner">
-    //           <div className="carousel-item active">
-    //             <img src={product.image} className="d-block w-100" alt={product.name} />
-    //           </div>
-    //           <div className="carousel-item">
-    //             <img src={product.image} className="d-block w-100" alt={product.name} />
-    //           </div>
-    //           <div className="carousel-item">
-    //             <img src={product.image} className="d-block w-100" alt={product.name} />
-    //           </div>
-    //         </div>
-    //         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    //           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    //           <span className="visually-hidden">Previous</span>
-    //         </button>
-    //         <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    //           <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    //           <span className="visually-hidden">Next</span>
-    //         </button>
-    //       </div>
-    //     </div>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block carr-img"
+                                src={item[0].image3}
+                                alt={item[0].name}
+                            />
 
-    //     <div className='detail.info'>
-    //       <h1>{product.name}</h1>
-    //       <h2>${product.price}</h2>
-    //       <h3>{product.description}</h3>
-    //       <h3>Cantidad: <br /> <Counter /></h3>
-    //       <AddToCart />
-    //     </div>
-    //   </div>
-    // )
+                        </Carousel.Item>
+                    </Carousel>
 
-    <div>
-      <h2>HOLA MUNDO{item.name}</h2>
-    </div>
-  )
+                </div>
+
+                <div className='item-info'>
+                    <h1 className='item-title'>{item[0].name}</h1>
+                    <h3 className="item-price">${item[0].price}</h3>
+                    <h2 className='item-desc'>{item[0].description}</h2>
+                    <h2 className='item-qty' >Cantidad: <br /> <Counter /></h2>
+                </div>
+            </div>
+        </>
+    );
 }
 
-export default ProductDetail
+export default ProductDetail;

@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/pages/home/Home';
 import Products from "./components/pages/products/Products"
 import ProductDetailContainer from './components/pages/products/productDetail/ProductDetailContainer';
+import Login from './components/login/Login';
+import Faq from './components/pages/faq/Faq';
 
 
 function App() {
@@ -15,9 +17,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="products" element={<Products />} />
         <Route path="products/item/:id" element={<ProductDetailContainer />} />
-        {/* <Route path="/contacto" element={<Contact />}></Route>
-        <Route path="/faq" element={<FAQ />}></Route>
-        <Route path="/login" element={<LogIn />}></Route> */}
+        <Route path='login' element={<Login/>} />
+        <Route path='faq' element={<Faq />} />
+
       </Routes>
     </BrowserRouter>
   );

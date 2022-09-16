@@ -1,0 +1,30 @@
+.carr-img{
+    width: 20vw;
+    border-radius: 5px;
+}
+
+.item-container{
+    width: 100%;
+    height: 100vh;
+    background-color: $bg-color;
+    @include flex-row;
+    .item-img{
+        width: 20vw;
+    }
+    .item-info{
+        margin-left: 50px;
+        width: 30vw;
+        .item-price{
+            font-size: 25px;
+            color: $salmon;
+        }
+        .item-desc{
+            font-size: 20px;
+            padding-top: 20px;
+        }
+        .item-qty{
+            padding-top: 30px;
+            font-size: 25px;
+        }
+    }
+}
