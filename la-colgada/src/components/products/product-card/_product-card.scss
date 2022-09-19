@@ -1,6 +1,7 @@
 .card-container {
   margin-top: 200px;
   .card {
+    background-color: $bg-color;
     @include flex-column;
     width: 350px;
     margin: 30px;
@@ -16,7 +17,7 @@
       }
       .card-price {
         padding-top: 10px;
-        font-size: 20px;
+        font-size: 15px;
       }
     }
   }

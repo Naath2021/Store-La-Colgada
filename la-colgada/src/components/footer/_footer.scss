@@ -1,0 +1,5 @@
+.footer-container {
+  height: 40vh;
+  background-color: $light-pink;
+  @include flex-row;
+}

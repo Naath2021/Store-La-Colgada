@@ -96,7 +96,7 @@ const ProductsMock = [
 
     {
         category:"utensilios", id: "6", name: "Colador Volcano",
-        price: 650, description: "colador de alimentos de cerámica pintado a mano. Precio por unidad. Medidas aproximadas: 15cm de diámetro, 10cm de alto.",
+        price: 6500, description: "colador de alimentos de cerámica pintado a mano. Precio por unidad. Medidas aproximadas: 15cm de diámetro, 10cm de alto.",
         image1: Volcano1, image2: Volcano2, image3: Volcano3
     },
     {

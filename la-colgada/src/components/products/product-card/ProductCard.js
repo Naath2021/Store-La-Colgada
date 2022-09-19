@@ -1,4 +1,4 @@
-import Counter from "../../counter/Counter";
+import { AddToCart } from "../../buttons/Buttons"
 
 const ProductsCard = ({ image, name, price }) => {
     return (
@@ -8,7 +8,7 @@ const ProductsCard = ({ image, name, price }) => {
                 <div className="card-body">
                     <h5 className="card-title titles-web">{name}</h5>
                     <h6 className="card-subtitle mb-2 texts card-price">${price}</h6>
-                    <Counter />
+                    <AddToCart/>
                 </div>
             </div>
         </div>

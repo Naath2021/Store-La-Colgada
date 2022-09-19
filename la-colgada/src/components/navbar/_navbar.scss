@@ -1,14 +1,12 @@
 .navbar-container {
   @include flex-row;
-  width: 150px;
-  height: 5vh;
   background-color: $yellow;
   position: fixed;
   top: 0px;
   z-index: 10;
-  padding: 50px 0;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  height: 50px;
   .navbar-logo {
     width: 200px;
   }
