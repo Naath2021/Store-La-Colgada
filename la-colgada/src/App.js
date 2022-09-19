@@ -7,6 +7,7 @@ import Products from "./components/pages/products/Products"
 import ProductDetailContainer from './components/pages/products/productDetail/ProductDetailContainer';
 import Login from './components/login/Login';
 import Faq from './components/pages/faq/Faq';
+import CategoryContainer from './components/products/categories/CategoryContainer';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="products" element={<Products />} />
         <Route path="products/item/:id" element={<ProductDetailContainer />} />
+        <Route path="products/category/:category" element={<CategoryContainer />} />
         <Route path='login' element={<Login/>} />
         <Route path='faq' element={<Faq />} />
 

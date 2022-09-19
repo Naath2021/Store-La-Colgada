@@ -1,5 +1,5 @@
 .carr-img{
-    width: 20vw;
+    width: 30vw;
     border-radius: 5px;
 }
 
@@ -9,7 +9,7 @@
     background-color: $bg-color;
     @include flex-row;
     .item-img{
-        width: 20vw;
+        width: 30vw;
     }
     .item-info{
         margin-left: 50px;
