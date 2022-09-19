@@ -1,13 +1,23 @@
-
-.card-container{
-    .card{
-        width: 500px;
-        margin: 30px;
-        .card-title{
-            font-weight: 600;
-        }
-        .card-img-top{
-            height:fit-content;
-        }
+.card-container {
+  margin-top: 200px;
+  .card {
+    @include flex-column;
+    width: 350px;
+    margin: 30px;
+    .card-body {
+      width: 100%;
+      @include flex-column;
+      .card-title {
+        font-size: 30px;
+        font-weight: 600;
+      }
+      .card-img-top {
+        height: fit-content;
+      }
+      .card-price {
+        padding-top: 10px;
+        font-size: 20px;
+      }
     }
+  }
 }

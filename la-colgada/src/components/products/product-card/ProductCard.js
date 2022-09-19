@@ -6,8 +6,8 @@ const ProductsCard = ({ image, name, price }) => {
             <div className="card">
                 <img src={image} className="card-img-top" alt={name} />
                 <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
-                    <h6 className="card-subtitle mb-2">${price}</h6>
+                    <h5 className="card-title titles-web">{name}</h5>
+                    <h6 className="card-subtitle mb-2 texts card-price">${price}</h6>
                     <Counter />
                 </div>
             </div>

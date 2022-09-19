@@ -12,7 +12,6 @@ const ProductDetailContainer = () => {
     const [productInfo, setProductInfo] = useState();
 
     const getProductInfo = new Promise((resolve) => {
-        //console.log(id)
         setTimeout(() => {
             resolve(ProductsMock.filter((item) => item.id === id))
         }, 1000)
@@ -26,7 +25,7 @@ const ProductDetailContainer = () => {
     })
 
     return (
-        <div>
+        <div className='category-page'>
             {productInfo && <ProductDetail item={productInfo} />}
         </div>
     )

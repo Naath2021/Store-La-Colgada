@@ -1,15 +1,14 @@
 *,
 *:before,
 *:after {
-  //background-color: rgb(237, 233, 225);
+  font-family: "Architects Daughter", cursive;
+  letter-spacing: 5px;
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
   list-style-type: none;
-  font-family: "Nanum Gothic", sans-serif;
   box-sizing: border-box;
   transition: all 0.3s ease;
   scroll-behavior: smooth;
-  
 }

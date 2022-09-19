@@ -1,31 +1,41 @@
 .navbar-container {
+  @include flex-row;
+  width: 150px;
+  height: 5vh;
+  background-color: $yellow;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  padding: 50px 0;
+  width: 100%;
+  justify-content: space-evenly;
+  .navbar-logo {
+    width: 200px;
+  }
+  .navbar-list-container {
     @include flex-row;
-    position: fixed;
-    top: 0px;
-    z-index: 10;
-    padding: 50px 0;
-    width: 100%;
-    justify-content: space-evenly;
-    .navbar-logo {
-      width: 80px;
-    }
-    .navbar-list-container {
-      a {
-        @include text-deco-none;
-        font-family: "Nanum Gothic", sans-serif;
-        font-size: 20px;
-        color: $fonts;
-        padding: 0 15px;
-        text-shadow: 3px 1px 1px rgba(150, 150, 150, 0.56);
-      }
-    }
-    .icon-container {
-      display: flex;
-      a {
+    ul {
+      margin: 0;
+      li {
         @include flex-row;
-        padding-left: 15px;
-        font-size: 20px;
-        color: $fonts;
+        a {
+          @include text-deco-none;
+          letter-spacing: 5px;
+          font-family: "Architects Daughter", cursive;
+          font-size: 15px;
+          color: $fonts;
+          padding: 0 15px;
+        }
       }
     }
+  }
+  .icon-container {
+    display: flex;
+    a {
+      @include flex-row;
+      padding-left: 15px;
+      font-size: 20px;
+      color: $fonts;
+    }
+  }
 }

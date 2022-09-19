@@ -1,34 +1,47 @@
-
-.see-products{
-    @include button-web-view;
-    background-color: $light-pink;
-    border: 1px solid $salmon;
-    width: 150px;
-    height: 40px;
+.see-products {
+  @include button-web-view;
+  background-color: $light-pink;
+  border: 1px solid $salmon;
+  width: 150px;
+  height: 40px;
 }
-.send-form{
-    @include button-web-view;
-    background-color: $bg-color;
-    border: 1px solid $fonts;
+.send-form {
+  @include button-web-view;
+  background-color: $bg-color;
+  border: 1px solid $fonts;
 }
-.add-to-cart{
-    @include button-web-view;
-    background-color: $bg-color;
-    border: 1px solid $fonts;
-    width: 200px;
+.add-to-cart {
+  @include button-web-view;
+  background-color: $bg-color;
+  border: 1px solid $fonts;
+  width: 250px;
+  .btn-content {
+    font-size: 13px;
+  }
 }
 
 .btn-add-items-to-cart-container {
-    @include flex-row;
-    padding: 0 20px;
-    .btn-add-substract{
-      outline: 0;
-      border: none;
-      color: $fonts;
-      background-color: $bg-color;
-    }
-    .itemQty{
-      font-size: 30px;
-      padding: 0 20px;
-    }
+  @include flex-row;
+  background-color: $bg-color;
+  width: 150px;
+  margin: 20px 0;
+  .btn-add-substract {
+    font-size: 10px;
+    outline: 0;
+    border: none;
+    color: $fonts;
+    background-color: $bg-color;
   }
+  .itemQty {
+    font-size: 20px;
+  }
+}
+
+.dropdown-container {
+  @include flex-row;
+  outline: none;
+  border: none;
+  background-color: $yellow;
+  color: $fonts;
+  transition: all 600ms;
+}
