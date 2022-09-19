@@ -10,11 +10,10 @@ const Home = () => {
 
                 <div className="home-welcoming-and-info">
                     <img src={homeBg} className="bg-img" alt="home-welcoming" />
-                    {/* <img src={brandInfo} className="brand-info-img" alt="brand-info-img" /> */}
+                    
                 </div>
                 <div className="home-product-link">
-                    {/* <h1 className="section-title">Manufactura decorativa</h1> */}
-                    <h2 className="section-description">Sensibilidad artística comprometida con explorar la noble manufactura y su trascender en objetos cotidianos.</h2>
+                    <h2 className="section-description texts">Sensibilidad artística comprometida con explorar la noble manufactura y su trascender en objetos cotidianos.</h2>
                     <SeeProduct />
                 </div>
             </div>
