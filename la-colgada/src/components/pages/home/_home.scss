@@ -1,33 +1,90 @@
-
 .sections-container {
-    .home-welcoming-and-info {
-      .bg-img,
-      .brand-info-img {
-        @include bg-image;
+  .welcoming {
+    @include flex-column;
+    background-image: url("../../../assets/image/backgrounds/home.png");
+    @include bg-cover;
+    @include bg-image;
+    .welcoming-title {
+      font-size: 50px;
+      width: 30vw;
+      margin-right: 300px;
+    }
+  }
+
+  .description {
+    @include flex-row;
+    height: 70vh;
+    background-image: url("../../../assets/image/backgrounds/pattern.png");
+    @include bg-fixed;
+    .text-container {
+      width: 40vw;
+      background-color: $bg-color-opacity;
+      padding: 30px;
+      h2 {
+        font-size: 25px;
+        color: $fonts;
+        text-align: center;
       }
     }
-  .home-product-link {
-    padding-left: 100px;
-    display: flex;
-    flex-flow: column wrap;
-    align-content: flex-start;
-    justify-content: center;
-    height: 100vh;
-    background-image: url("../../../assets/image/backgrounds/only-pair-white-pots.png");
-    @include bg-fixed;
-    .section-title {
-      font-size: 80px;
-      color: $bg-color;
-      padding: 0 0 20px 0;
+  }
+
+  .brand-details {
+    @include flex-row;
+    .detail-container {
+      @include flex-column;
+      padding: 100px 40px 0 40px;
+      .detail-title {
+        font-size: 30px;
+      }
+      .detail-desc {
+        font-size: 15px;
+        width: 15vw;
+        text-align: center;
+        padding-top: 20px;
+      }
+      .icon {
+        font-size: 80px;
+      }
     }
-    .section-description {
-      font-family: 'Questrial', sans-serif;
-      width: 30vw;
-      text-align:center;
-      font-size: 30px;
-      color: $bg-color;
-      text-align: left;
-      padding: 0 0 20px 0;
+  }
+
+  .categories-container {
+    height: 120vh;
+    @include flex-column;
+    .category-title {
+      font-size: 80px;
+    }
+    .card-container {
+      @include flex-row;
+      .categories {
+        height: 40vh;
+        padding: 0 30px;
+        .category-img {
+          width: 20vw;
+        }
+      }
+    }
+  }
+
+  .about {
+    @include flex-column;
+    height: 150vh;
+    background-image: url("../../../assets/image/backgrounds/patt-brand-name.png");
+    @include bg-fixed;
+    .text-container{
+      @include flex-column;
+      width: 60vw;
+      height: 40vh;
+      background-color: $bg-color-opacity;
+      .about-title{
+        font-size: 60px;
+      }
+      .about-desc{
+        font-size: 18px;
+        width: 40vw;
+        text-align: center;
+        padding: 20px 0;
+      }
     }
   }
 }

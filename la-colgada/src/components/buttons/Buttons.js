@@ -24,10 +24,10 @@ function DropdownCategory() {
                 Productos
             </Dropdown.Toggle>
 
-            <Dropdown.Menu className="">
-                <DropdownItem><Link to={"products/category/macetas"}>macetas</Link></DropdownItem>
-                <DropdownItem><Link to={"products/category/platos"}>platos</Link></DropdownItem>
-                <DropdownItem><Link to={"products/category/combos"}>combos</Link></DropdownItem>
+            <Dropdown.Menu>
+                <DropdownItem><Link to={"products/category/macetas"}replace>macetas</Link></DropdownItem>
+                <DropdownItem><Link to={"products/category/platos"}replace>platos</Link></DropdownItem>
+                <DropdownItem><Link to={"products/category/combos"}replace>combos</Link></DropdownItem>
                 <DropdownItem><Link to={"products"}>ver todos</Link></DropdownItem>
             </Dropdown.Menu>
         </Dropdown>

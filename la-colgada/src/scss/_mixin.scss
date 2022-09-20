@@ -23,6 +23,11 @@
     background-size: cover;
     background-position: bottom;
   }
+  @mixin bg-cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
   
   @mixin text-deco-none {
     text-decoration: none;

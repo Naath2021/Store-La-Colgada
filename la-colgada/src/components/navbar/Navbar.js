@@ -8,7 +8,6 @@ import logo from "../../assets/image/logo/logo.png"
 import { Link } from "react-router-dom"
 import Cart from '../cart/Cart';
 import { DropdownCategory } from '../buttons/Buttons';
-// import DropdownProduct from '../dropdown/DropdownCategory';
 
 const Navbar = () => {
     return (

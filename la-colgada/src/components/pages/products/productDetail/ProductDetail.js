@@ -37,10 +37,10 @@ function ProductDetail({ item }) {
                 </div>
 
                 <div className='item-info'>
-                    <h1 className='item-title'>{item[0].name}</h1>
-                    <h3 className="item-price">${item[0].price}</h3>
-                    <h2 className='item-desc'>{item[0].description}</h2>
-                    <h2 className='item-qty' >Cantidad: <br /> <Counter /></h2>
+                    <h1 className='item-title titles-web'>{item[0].name}</h1>
+                    <h3 className="item-price texts">${item[0].price}</h3>
+                    <h2 className='item-desc texts'>{item[0].description}</h2>
+                    <h2 className='item-qty texts' >Cantidad: <br /> <Counter /></h2>
                 </div>
             </div>
         </>

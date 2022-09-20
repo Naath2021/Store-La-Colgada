@@ -41,7 +41,7 @@
   @include flex-row;
   outline: none;
   border: none;
-  background-color: $yellow;
+  background-color: transparent;
   color: $fonts;
   transition: all 600ms;
 }

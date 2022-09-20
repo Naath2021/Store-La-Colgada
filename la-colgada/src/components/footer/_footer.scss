@@ -1,0 +1,28 @@
+.footer-container {
+  @include flex-column;
+  height: 40vh;
+  background-color: $light-pink;
+  .footer-nav-container {
+    .conect {
+      @include flex-column;
+      a {
+        color: $fonts;
+        @include text-deco-none;
+      }
+    }
+    .explore {
+      @include flex-column;
+    }
+    .subscribe {
+      @include flex-column;
+      .footer-input {
+        border: none;
+        background-color: $bg-color;
+        height: 30px;
+      }
+    }
+  }
+  .disclaimer {
+    @include flex-row;
+  }
+}
