@@ -3,7 +3,6 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { CartWidget } from '../cart/CartWidget';
-import { emptyCartAlert } from '../cart/CartWidget';
 import logo from "../../assets/image/logo/logo.png"
 import { Link } from "react-router-dom"
 import Cart from '../cart/Cart';
@@ -24,7 +23,7 @@ const Navbar = () => {
             </div>
             <div className='icon-container'>
                 <Link to={"/login"}><FontAwesomeIcon icon={faUser} /> </Link>
-                <CartWidget emptyCart={emptyCartAlert} Cart={<Cart/>}/>
+                <CartWidget Cart={<Cart/>}/>
             </div>
         </div>
     );

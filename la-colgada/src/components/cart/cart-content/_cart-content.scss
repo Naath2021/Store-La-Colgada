@@ -1,0 +1,11 @@
+.card-item-container{
+    @include flex-row;
+    .cart-item-info{
+        @include flex-row;
+        justify-content: space-between;
+    }
+}
+
+.cart-item-img{
+    width: 5vw;
+}

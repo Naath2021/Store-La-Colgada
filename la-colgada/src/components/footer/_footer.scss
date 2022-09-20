@@ -1,28 +1,42 @@
 .footer-container {
   @include flex-column;
+  justify-content: space-evenly;
   height: 40vh;
   background-color: $light-pink;
   .footer-nav-container {
-    .conect {
+    @include flex-row;
+    justify-content: space-around;
+    width: 100%;
+    .conect,
+    .explore {
       @include flex-column;
       a {
         color: $fonts;
         @include text-deco-none;
       }
     }
-    .explore {
-      @include flex-column;
-    }
+
     .subscribe {
       @include flex-column;
       .footer-input {
+        outline: none;
         border: none;
         background-color: $bg-color;
         height: 30px;
+        margin-bottom: 15px;
       }
     }
   }
+
+  .contact {
+    h3 {
+      font-size: 15px;
+    }
+  }
+
   .disclaimer {
-    @include flex-row;
+    h4 {
+      font-size: 15px;
+    }
   }
 }
