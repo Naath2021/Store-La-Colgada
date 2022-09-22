@@ -1,11 +1,14 @@
 .footer-container {
+  position:static;
+  bottom: 0;
   @include flex-column;
   justify-content: space-evenly;
   height: 40vh;
+  width: 100%;
   background-color: $light-pink;
   .footer-nav-container {
     @include flex-row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     .conect,
     .explore {

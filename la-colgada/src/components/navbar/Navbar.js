@@ -2,10 +2,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { CartWidget } from '../cart/CartWidget';
+import Cart from '../cart/Cart';
 import logo from "../../assets/image/logo/logo.png"
 import { Link } from "react-router-dom"
-import Cart from '../cart/Cart';
 import { DropdownCategory } from '../buttons/Buttons';
 
 const Navbar = () => {
@@ -15,15 +14,15 @@ const Navbar = () => {
             <div className='navbar-list-container'>
                 <ul>
                     <li>
-                        <Link to={"/products"}><DropdownCategory/></Link>
-                        <Link to={"/FAQ"}>faq</Link>
-                        <Link to={"/contact"}>contacto</Link>
+                        <Link to={"products"}><DropdownCategory/></Link>
+                        <Link to={"preguntas-frecuentes"}>faq</Link>
+                        <Link to={"contact"}>contacto</Link>
                     </li>
                 </ul>
             </div>
             <div className='icon-container'>
                 <Link to={"/login"}><FontAwesomeIcon icon={faUser} /> </Link>
-                <CartWidget Cart={<Cart/>}/>
+                <Cart/>
             </div>
         </div>
     );

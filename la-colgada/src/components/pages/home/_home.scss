@@ -5,9 +5,9 @@
     @include bg-cover;
     @include bg-image;
     .welcoming-title {
-      font-size: 50px;
+      font-size: 3vw;
       width: 30vw;
-      margin-right: 300px;
+      margin-right: 15vw;
     }
   }
 
@@ -19,9 +19,9 @@
     .text-container {
       width: 40vw;
       background-color: $bg-color-opacity;
-      padding: 30px;
+      padding: 3vw;
       h2 {
-        font-size: 25px;
+        font-size: 1vw;
         color: $fonts;
         text-align: center;
       }
@@ -32,30 +32,35 @@
     @include flex-row;
     .detail-container {
       @include flex-column;
-      padding: 100px 40px 0 40px;
+      padding: 10vw 3vw 0 3vw;
       .detail-title {
-        font-size: 30px;
+        font-weight: 600;
+        font-size: 1vw;
+        padding-top: 1vw;
       }
       .detail-desc {
-        font-size: 15px;
+        font-size: .7vw;
         width: 15vw;
         text-align: center;
         padding-top: 20px;
       }
       .icon {
-        font-size: 80px;
+        font-size: 3vw;
       }
     }
   }
 
   .categories-container {
-    height: 120vh;
+    height: fit-content;
     @include flex-column;
     .category-title {
-      font-size: 80px;
+      font-size: 3vw;
+      margin-top: 20vh;
+      align-self: flex-start
     }
     .card-container {
       @include flex-row;
+      margin-bottom: 40vh;
       .categories {
         height: 40vh;
         padding: 0 30px;
@@ -77,13 +82,13 @@
       height: 40vh;
       background-color: $bg-color-opacity;
       .about-title{
-        font-size: 60px;
+        font-size: 3vw;
+        padding-bottom: 1vw;
       }
       .about-desc{
-        font-size: 18px;
+        font-size: 1vw;
         width: 40vw;
         text-align: center;
-        padding: 20px 0;
       }
     }
   }

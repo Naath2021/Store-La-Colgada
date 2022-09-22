@@ -1,23 +1,10 @@
 import { Link } from 'react-router-dom'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Button, DropdownItem } from 'semantic-ui-react'
 import Dropdown from 'react-bootstrap/Dropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SeeProduct = () => <Link to={"/products"} tyle={{ textDecoration: "none", listStyleType: "none", listStyle: "none", color: "rgb(34, 34, 34)" }}><Button type="submit" className='see-products'>Ver Productos</Button></Link>
+const SeeProduct = () => <Link to={"../products"}><Button type="submit" className='see-products link-router'>Ver Productos</Button></Link>
 
-const SendForm = () => <Button className='send-form'>Enviar</Button>
-
-const AddToCart = () =>
-    <Link to="../cart">
-        <Button className='add-to-cart' animated='vertical'>
-            <Button.Content hidden className='btn-content'>Agregar al carrito</Button.Content>
-            <Button.Content visible>
-                <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-            </Button.Content>
-        </Button>
-    </Link>
-
+const SendForm = () => <Button type='submit' className='send-form'>Enviar</Button>
 
 function DropdownCategory() {
     return (
@@ -36,4 +23,4 @@ function DropdownCategory() {
     );
 }
 
-export { SeeProduct, SendForm, AddToCart, DropdownCategory }
+export { SeeProduct, SendForm, DropdownCategory }

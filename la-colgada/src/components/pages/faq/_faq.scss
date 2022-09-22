@@ -1,0 +1,13 @@
+.faq-start{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../assets/image/backgrounds/flower-patron-box.png");
+    @include bg-cover;
+    .faq-title{
+        @include flex-column;
+        margin-left: 150px;
+    }
+}
+.acc-container{
+    min-height: 100vh;
+}

@@ -14,7 +14,7 @@ const ProductDetailContainer = () => {
     const getProductInfo = new Promise((resolve) => {
         setTimeout(() => {
             resolve(ProductsMock.filter((item) => item.id === id))
-        }, 1000)
+        }, 500)
     })
 
     useEffect(() => {
