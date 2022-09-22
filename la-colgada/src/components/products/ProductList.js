@@ -8,7 +8,7 @@ const ProductList = ({ list }) => {
         <div className="product-container">
             {
                 list.map((product) => (
-                    <Link key={product.id} to={"../products/item/" + product.id} style={{ textDecoration: "none", listStyleType: "none", listStyle: "none", color: "rgb(34, 34, 34)" }}>
+                    <Link key={product.id} to={"../products/item/" + product.id} className="link-router">
                         <ProductsCard
                             image={product.image1}
                             name={product.name}

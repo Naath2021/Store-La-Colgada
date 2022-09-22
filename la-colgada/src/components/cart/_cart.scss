@@ -1,6 +1,14 @@
 .cart-icon{
-    margin-top: 200px;
-    outline: 0;
     border: none;
-    background-color: $bg-color;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+    color: $fonts;
+    background-color: transparent;
+    font-size: 20px;
+    padding:0 10px;
+    &:hover{
+        background-color: transparent;
+        color: $fonts;
+    }
 }
