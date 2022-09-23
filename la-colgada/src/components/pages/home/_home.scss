@@ -56,7 +56,7 @@
     .category-title {
       font-size: 3vw;
       margin-top: 20vh;
-      align-self: flex-start
+      align-self: flex-start;
     }
     .card-container {
       @include flex-row;

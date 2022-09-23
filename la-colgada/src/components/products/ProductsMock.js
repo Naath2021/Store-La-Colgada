@@ -5,10 +5,6 @@ import Betty2 from "../../assets/image/amarilla-colgante-simple2.jpeg"
 import Betty3 from "../../assets/image/amarilla-colgante-simple3.jpeg"
 
 
-import Monroe1 from "../../assets/image/b&w-colgante-simple.jpeg"
-import Monroe2 from "../../assets/image/b&w-colgante-simple2.jpeg"
-import Monroe3 from "../../assets/image/b&w-colgante-simple3.jpeg"
-
 import Gravity1 from "../../assets/image/gravity9-colgante-compuesto.jpeg"
 import Gravity2 from "../../assets/image/gravity9-colgante-compuesto2.jpeg"
 import Gravity3 from "../../assets/image/gravity9-colgante-compuesto3.jpeg"
@@ -64,12 +60,6 @@ const ProductsMock = [
         price: 4700,
         description: "maceta de cerámica con colgantes de cuero pintada de amarillo. Medidas aproximadas: 15cm x 15cm.",
         image1: Betty1, image2: Betty2, image3: Betty3
-    },
-
-    {
-        category:"macetas", id: "1", name: "Monroe",
-        price: 4700, description: "maceta de cerámica con colgantes de cuero. Medidas aproximadas: 15cm x 15cm.",
-        image1: Monroe1, image2: Monroe2, image3: Monroe3
     },
 
     {

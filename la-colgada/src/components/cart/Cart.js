@@ -2,12 +2,24 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import CartWidget from "../cart/CartWidget"
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import CartContent from './cart-content/CartContent';
 
-function Cart(product, totalPrice) {
+function Cart() {
+
+  const { cart, addToCart, deleteProduct, clearCart } = useContext(CartContext);
+  console.log("carritooo   " + cart)
+
+
+
+
+  // States propios del offcanvas
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  // States propios del offcanvas
+
 
   return (
     <>
@@ -21,6 +33,11 @@ function Cart(product, totalPrice) {
         </Offcanvas.Header>
         <Offcanvas.Body>
           acá irán los items del carrito
+
+
+          <CartContent cart={cart}/>
+
+
           {/* <div className='cart-body-container'>
             <img src={product.img} alt={product.name} className="cart-item-img"/>
             <div className='cart-item-info-container'>

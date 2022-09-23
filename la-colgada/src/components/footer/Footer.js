@@ -24,7 +24,7 @@ const Footer = () => {
 
                 <div className="subscribe">
                     <h2 className="texts section-title">suscríbete</h2>
-                    <input type="email" className="footer-input" placeholder="e-mail <3"></input>
+                    <input type="email" className="footer-input link-router " placeholder="   e-mail <3"></input>
                     <SendForm />
                 </div>
 
