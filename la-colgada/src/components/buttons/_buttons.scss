@@ -24,7 +24,6 @@
   @include flex-row;
   background-color: $bg-color;
   width: 150px;
-  margin: 20px 0;
   .btn-add-substract {
     font-size: 10px;
     outline: 0;
@@ -45,4 +44,8 @@
   background-color: transparent;
   color: $fonts;
   transition: all 600ms;
+}
+
+.delete-product-btn{
+  border: none;
 }

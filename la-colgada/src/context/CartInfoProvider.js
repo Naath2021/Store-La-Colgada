@@ -11,15 +11,17 @@ const CartInfoProvider = ({ children }) => {
         } else {
             setCart([...cart, { product, qty, productTotalPrice }])
             console.log("cart: ", [...cart, { product, qty, productTotalPrice }])
+            console.log(cart.length)
         }
     }
 
     const clearCart = () => setCart([]);
 
-    const deleteProduct = () => {
-        return cart.filter((item) => {
-            return item !== item.product.id
-        })
+    const deleteProduct = (item) => {
+        let index = cart.indexOf(item)
+        let itemToDelete = cart.splice(index, 1)
+        let newCart = cart.filter(item => item !== itemToDelete)
+        setCart(newCart)
     }
 
     const alreadyInCart = function (id) {
@@ -29,8 +31,15 @@ const CartInfoProvider = ({ children }) => {
     }
 
 
+    const getTotalCartPrice = () => {
+        return cart.reduce((acc, item) => acc += item.product.price * item.qty, 0)
+    }
+
+    console.log(getTotalCartPrice)
+
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, deleteProduct, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, deleteProduct, clearCart, getTotalCartPrice }}>
             {children}
         </CartContext.Provider >
     )

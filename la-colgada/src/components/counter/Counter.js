@@ -5,7 +5,7 @@ const Counter = ({ count, setCount }) => {
 
     const AddItem = () => {
         setCount(count + 1)
-        if (count >= 100) {
+        if (count >= 50) {
             alert("Haz alcanzado el máximo de unidades a ordenar")
         }
     }
