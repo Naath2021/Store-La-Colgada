@@ -15,7 +15,6 @@ function ProductDetail({ item }) {
     const { addToCart } = useContext(CartContext);
 
     function onAdd(product, totalPrice) {
-        //console.log("eeeeeeeeeeo" + product.id +  " precio " + totalPrice)
         addToCart(product, count, totalPrice)
     }
 
@@ -60,8 +59,8 @@ function ProductDetail({ item }) {
                     <h1 className='item-title titles-web'>{item[0].name}</h1>
                     <h3 className="item-price texts">${item[0].price}</h3>
                     <h2 className='item-desc texts'>{item[0].description}</h2>
+                    <h6 className='item-design-disclaimer'>IMPORTANTE: todas las imágenes son ilustrativas, debido a que son piezas únicas y es probable que vengan en diferentes formas, sólo se mantienen los tamaños informados.</h6>
                     <h2 className='item-qty texts' >cantidad: <br /> <Counter count={count} setCount={setCount} /></h2>
-                    <Link to="../products" className='link-router btn-to-products'>¡sigue comprando!</Link>
 
                     <Button className='add-to-cart' animated='vertical' onClick={() => onAdd(item[0], calculatedPrice)}>
                         <Button.Content hidden className='btn-content'>agregar al carrito</Button.Content>
@@ -69,6 +68,8 @@ function ProductDetail({ item }) {
                             <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
                         </Button.Content>
                     </Button>
+
+                    <Link to="../products" className='link-router btn-to-products'>¡sigue comprando!</Link>
                 </div>
             </div>
         </>

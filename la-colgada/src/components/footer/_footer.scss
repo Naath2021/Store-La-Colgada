@@ -22,11 +22,10 @@
     .subscribe {
       @include flex-column;
       .footer-input {
-        outline: none;
-        border: none;
         background-color: $bg-color;
         height: 30px;
         margin-bottom: 15px;
+        border-radius: 5px;
       }
     }
   }

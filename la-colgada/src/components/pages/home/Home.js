@@ -66,7 +66,7 @@ const Home = () => {
 
 
                 <div className="about">
-                    <div className="text-container">
+                    <div className="text-container b-radius">
                         <h2 className="titles-web about-title">acerca de</h2>
                         <h3 className="texts about-desc">Sensibilidad artística comprometida con explorar la noble manufactura y su trascender en objetos cotidianos. Son piezas únicas hechas a mano, con estilos especiales y blah blah blah. Hagamos un párrafo más largo para describir la marca.</h3>
                     </div>

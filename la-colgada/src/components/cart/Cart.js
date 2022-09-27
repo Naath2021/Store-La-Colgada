@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import { Popup } from 'semantic-ui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import CartWidget from "../cart/CartWidget"
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
-function Cart(product, totalPrice) {
+function Cart(item) {
+
+  const { cart, deleteProduct, clearCart, getTotalCartPrice } = useContext(CartContext);
+
+  // States propios del offcanvas
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -15,21 +24,34 @@ function Cart(product, totalPrice) {
         <CartWidget />
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose} placement="end" backdrop="true" scroll="true" >
+      <Offcanvas show={show} onHide={handleClose} placement="end" backdrop={true}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title className='texts'>Carrito</Offcanvas.Title>
+          <Offcanvas.Title>¡tu carrito!</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          acá irán los items del carrito
-          {/* <div className='cart-body-container'>
-            <img src={product.img} alt={product.name} className="cart-item-img"/>
-            <div className='cart-item-info-container'>
-              <h2 className='cart-item-name'>{product.name}</h2>
-              <h6 className='cart-item-price'>{totalPrice}</h6>
-              <Button onClick={deleteProduct()}>eliminar</Button>
-            </div>
-          </div>
-          <Button onClick={clearCart()}>limpiar carrito</Button> */}
+
+          {cart.length === 0
+            ? <>
+              <h6 className='texts empty-cart'>:c estoy vacío, ¡lléname de productos!</h6>
+              <Link to="products" className='link-router'>ver productos</Link>
+            </>
+            : cart.map((item) => {
+              return <div key={item.product.id} className="cart-body-container">
+                <div className='item-container'>
+                  <div className="cart-img-container">
+                    <img src={item.product.image1} alt={item.product.name} className="item-img b-radius-5" />
+                  </div>
+                  <div className='cart-item-info-container'>
+                    <button onClick={() => deleteProduct(item)} className="delete-product-btn"><Popup content='Eliminar producto' trigger={<FontAwesomeIcon icon={faXmark} />} /></button>
+                    <h2 className='texts cart-item-name'>{item.product.name}</h2>
+                    <h6 className="texts cart-item-price">{item.qty} x ${item.productTotalPrice}</h6>
+                  </div>
+                </div>
+              </div>
+            })
+          }
+          <h5 className='texts cart-total-price'> total: ${getTotalCartPrice()}</h5>
+          <h6 onClick={() => clearCart()} className="clear-cart">vaciar carrito</h6>
         </Offcanvas.Body>
       </Offcanvas>
     </>
