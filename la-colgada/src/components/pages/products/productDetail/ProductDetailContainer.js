@@ -3,25 +3,21 @@ import React from 'react'
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import ProductDetail from './ProductDetail';
-import ProductsMock from '../../../products/ProductsMock';
+import db from '../../../..';
+import { doc, getDoc } from 'firebase/firestore';
 
 const ProductDetailContainer = () => {
 
     const { id } = useParams();
 
+    const queryDoc = doc(db, "products", id)
+
     const [productInfo, setProductInfo] = useState();
 
-    const getProductInfo = new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(ProductsMock.filter((item) => item.id === id))
-        }, 1000)
-    })
-
     useEffect(() => {
-        getProductInfo.then((response) => {
-            //console.log(response)
-            setProductInfo(response)
-        })
+        getDoc(queryDoc).then(res => {
+            setProductInfo(res.data())
+        }).catch(err => console.log(err))
     })
 
     return (

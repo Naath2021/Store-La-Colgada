@@ -1,17 +1,22 @@
 import { faGlobe, faHandSparkles, faTruck } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Category1 from "../../../../src/assets/image/verdita-colgante-simple-closeup.jpeg"
-import Category2 from "../../../../src/assets/image/platos.jpeg"
-import Category3 from "../../../../src/assets/image/jarra+filtro.jpeg"
+import db from "../../..";
+import { getDocs, collection } from 'firebase/firestore';
+import Category1 from "../../../assets/image/backgrounds/home.png"
+import Category2 from "../../../assets/image/backgrounds/home.png"
+import Category3 from "../../../assets/image/backgrounds/home.png"
 
+const baseUrl = "/img/"
 
 const Home = () => {
+
+
     return (
         <>
             <div className="sections-container">
-                <div className="welcoming">
-                    <h1 className="titles welcoming-title">manufactura estimulante de objetos únicos...</h1>
+                <div className="welcoming ">
+                    <h1 className="titles-web welcoming-title">manufactura estimulante de objetos únicos...</h1>
                 </div>
 
                 <div className="description" >
@@ -43,19 +48,19 @@ const Home = () => {
                 <div className="categories-container">
                     <h2 className="titles-web category-title">categorías</h2>
                     <div className="card-container">
-                        <Link to={"products/category/macetas"} style={{ textDecoration: "none", listStyleType: "none", listStyle: "none", color: "rgb(34, 34, 34)" }}>
+                        <Link to={"products/category/macetas"} className="link-router">
                             <div className="categories">
                                 <img src={Category1} alt="categoria-macetas" className="category-img b-radius" />
                                 <h3>macetas</h3>
                             </div>
                         </Link>
-                        <Link to={"products/category/platos"} style={{ textDecoration: "none", listStyleType: "none", listStyle: "none", color: "rgb(34, 34, 34)" }}>
+                        <Link to={"products/category/utensilios"} className="link-router">
                             <div className="categories">
                                 <img src={Category2} alt="categoria-macetas" className="category-img b-radius" />
-                                <h3>platos</h3>
+                                <h3>utensilios</h3>
                             </div>
                         </Link>
-                        <Link to={"products/category/combos"} style={{ textDecoration: "none", listStyleType: "none", listStyle: "none", color: "rgb(34, 34, 34)" }}>
+                        <Link to={"products/category/combos"} className="link-router">
                             <div className="categories">
                                 <img src={Category3} alt="categoria-macetas" className="category-img b-radius" />
                                 <h3>combos</h3>
@@ -66,7 +71,7 @@ const Home = () => {
 
 
                 <div className="about">
-                    <div className="text-container">
+                    <div className="text-container b-radius">
                         <h2 className="titles-web about-title">acerca de</h2>
                         <h3 className="texts about-desc">Sensibilidad artística comprometida con explorar la noble manufactura y su trascender en objetos cotidianos. Son piezas únicas hechas a mano, con estilos especiales y blah blah blah. Hagamos un párrafo más largo para describir la marca.</h3>
                     </div>

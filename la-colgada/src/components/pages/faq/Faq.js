@@ -1,76 +1,42 @@
-import React, { Component } from 'react'
-import { Accordion, Icon } from 'semantic-ui-react'
+import Accordion from 'react-bootstrap/Accordion';
 
-export default class Faq extends Component {
-  state = { activeIndex: 0 }
+function BasicExample() {
+  return (
+    <>
+      <div className='faq-start'>
+        <h1 className='faq-title'>Preguntas frecuentes</h1>
+      </div>
 
-  handleClick = (e, titleProps) => {
-    const { index } = titleProps
-    const { activeIndex } = this.state
-    const newIndex = activeIndex === index ? -1 : index
-
-    this.setState({ activeIndex: newIndex })
-  }
-
-  render() {
-    const { activeIndex } = this.state
-
-    return (
-      <Accordion styled>
-        <Accordion.Title
-          active={activeIndex === 0}
-          index={0}
-          onClick={this.handleClick}
-        >
-          <Icon name='dropdown' />
-          What is a dog?
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty and
-            faithfulness, it can be found as a welcome guest in many households
-            across the world.
-          </p>
-        </Accordion.Content>
-
-        <Accordion.Title
-          active={activeIndex === 1}
-          index={1}
-          onClick={this.handleClick}
-        >
-          <Icon name='dropdown' />
-          What kinds of dogs are there?
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
-          <p>
-            There are many breeds of dogs. Each breed varies in size and
-            temperament. Owners often select a breed of dog that they find to be
-            compatible with their own lifestyle and desires from a companion.
-          </p>
-        </Accordion.Content>
-
-        <Accordion.Title
-          active={activeIndex === 2}
-          index={2}
-          onClick={this.handleClick}
-        >
-          <Icon name='dropdown' />
-          How do you acquire a dog?
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 2}>
-          <p>
-            Three common ways for a prospective owner to acquire a dog is from
-            pet shops, private owners, or shelters.
-          </p>
-          <p>
-            A pet shop may be the most convenient way to buy a dog. Buying a dog
-            from a private owner allows you to assess the pedigree and
-            upbringing of your dog before choosing to take it home. Lastly,
-            finding your dog from a shelter, helps give a good home to a dog who
-            may not find one so readily.
-          </p>
-        </Accordion.Content>
-      </Accordion>
-    )
-  }
+      <div className='acc-container'>
+        <Accordion defaultActiveKey="0">
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Body>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Accordion Item #2</Accordion.Header>
+            <Accordion.Body>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      </div>
+    </>
+  );
 }
+
+export default BasicExample;

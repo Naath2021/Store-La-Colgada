@@ -1,30 +1,30 @@
-
-import React, { useState } from "react"
-import { AddToCart } from "../buttons/Buttons"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const Counter = () => {
-    const [items, setitems] = useState(0)
+const Counter = ({ count, setCount }) => {
 
-    const AddItem = () => setitems(items + 1)
-    const RemoveItem = () => items > 0 ? setitems(items - 1) : alert("Acción inválida.")
+    const AddItem = () => {
+        setCount(count + 1)
+        if (count >= 50) {
+            alert("Haz alcanzado el máximo de unidades a ordenar")
+        }
+    }
+    const RemoveItem = () => count > 2 ? setCount(count - 1) : count
+
+    
 
     return (
         <>
             <div className="btn-add-items-to-cart-container">
 
-                <button href="#top" className="btn btn-primary btn-add-substract" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={RemoveItem}><FontAwesomeIcon icon={faMinus}/></button>
+                <button className="btn-add-substract" onClick={RemoveItem}><FontAwesomeIcon icon={faMinus} /></button>
 
-                <h2 className="itemQty">{items}</h2>
+                <h2 className="itemQty">{count}</h2>
 
-                <button href="#top" className="btn btn-primary btn-add-substract" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={AddItem}><FontAwesomeIcon icon={faPlus}/></button>
-            </div>
-            <div className="btn-add-to-cart">
-                <AddToCart />
+                <button className="btn-add-substract" onClick={AddItem}><FontAwesomeIcon icon={faPlus} /></button>
             </div>
         </>
     )
 }
 
-export default Counter
+export default Counter 
