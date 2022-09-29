@@ -9,7 +9,11 @@ import { CartContext } from '../../context/CartContext';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 
-function Cart(item) {
+
+
+const baseUrl = "/img/"
+
+function Cart() {
 
   const { cart, deleteProduct, clearCart, getTotalCartPrice } = useContext(CartContext);
 
@@ -17,6 +21,7 @@ function Cart(item) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
 
   return (
     <>
@@ -39,7 +44,7 @@ function Cart(item) {
               return <div key={item.product.id} className="cart-body-container">
                 <div className='item-container'>
                   <div className="cart-img-container">
-                    <img src={item.product.image1} alt={item.product.name} className="item-img b-radius-5" />
+                    <img src={baseUrl + item.product.image1} alt={item.product.name} className="item-img b-radius-5" />
                   </div>
                   <div className='cart-item-info-container'>
                     <button onClick={() => deleteProduct(item)} className="delete-product-btn"><Popup content='Eliminar producto' trigger={<FontAwesomeIcon icon={faXmark} />} /></button>

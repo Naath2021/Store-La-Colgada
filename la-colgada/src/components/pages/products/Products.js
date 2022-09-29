@@ -1,5 +1,4 @@
 
-import React from 'react'
 import ProductContainer from "../../products/ProductContainer"
 
 const Products = () => {

@@ -15,7 +15,7 @@ function DropdownCategory() {
 
             <Dropdown.Menu>
                 <DropdownItem><Link to={"products/category/macetas"} replace>macetas</Link></DropdownItem>
-                <DropdownItem><Link to={"products/category/platos"} replace>platos</Link></DropdownItem>
+                <DropdownItem><Link to={"products/category/utensilios"} replace>utensilios</Link></DropdownItem>
                 <DropdownItem><Link to={"products/category/combos"} replace>combos</Link></DropdownItem>
                 <DropdownItem><Link to={"products"}>ver todos</Link></DropdownItem>
             </Dropdown.Menu>

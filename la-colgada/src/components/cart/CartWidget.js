@@ -10,7 +10,6 @@ const CartWidget = () => {
     return (
         <>
             <div className='cart-items-container'>
-                {console.log(cart.length)}
                 <FontAwesomeIcon icon={faBagShopping} />
                 {cart.length !== 0 ? <h6 className='cart-items-qty titles-web'>{cart.length}</h6> : ""}
             </div>

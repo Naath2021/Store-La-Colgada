@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
+// import db from "..";
+// import { getDoc, doc } from "firebase/firestore";
 
 
 const CartInfoProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+
+    // const cartQuery = doc(db, "products")
+    // useEffect(() => {
+    //     getDoc(cartQuery).then(res => {
+    //         setCart(res.data())
+    //     }).catch(err => console.log(err))
+    // })
+
+
 
     const addToCart = (product, qty, productTotalPrice) => {
         if (alreadyInCart(product.id)) {
             alert("ya lo agregaste.")
         } else {
             setCart([...cart, { product, qty, productTotalPrice }])
-            console.log("cart: ", [...cart, { product, qty, productTotalPrice }])
-            console.log(cart.length)
+            // console.log("cart: ", [...cart, { product, qty, productTotalPrice }])
+            // console.log(cart.length)
         }
     }
 
@@ -34,8 +45,6 @@ const CartInfoProvider = ({ children }) => {
     const getTotalCartPrice = () => {
         return cart.reduce((acc, item) => acc += item.product.price * item.qty, 0)
     }
-
-    console.log(getTotalCartPrice)
 
 
     return (
