@@ -11,7 +11,7 @@ const ProductList = ({ list }) => {
                 list.map((product) => (
                     <Link key={product.id} to={"../products/item/" + product.id} className="link-router">
                         <ProductsCard
-                            image={product.image1}
+                            image={product.image1} 
                             name={product.name}
                             price={product.price}
                         />
