@@ -1,6 +1,6 @@
+import { BtnAddToCart } from "../../buttons/Buttons"
 
-
-const imageBaseUrl = "../img/"
+const imageBaseUrl = "/img/"
 
 const ProductsCard = ({ image, name, price }) => {
     return (
