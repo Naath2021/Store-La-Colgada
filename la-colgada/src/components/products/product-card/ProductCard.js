@@ -1,4 +1,4 @@
-import { BtnAddToCart } from "../../buttons/Buttons"
+
 
 const imageBaseUrl = "/img/"
 

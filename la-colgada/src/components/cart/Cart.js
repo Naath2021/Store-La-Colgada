@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { Popup } from 'semantic-ui-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+// import { Popup } from 'semantic-ui-react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+// import { btnOrderCheckout } from '../buttons/Buttons';
+import CartBody from './CartBody';
+import OrderCheckout from './orderCheckout/OrderCheckout';
 
 
 
@@ -22,7 +25,6 @@ function Cart() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
   return (
     <>
       <Button onClick={handleShow} className="cart-icon">
@@ -35,9 +37,9 @@ function Cart() {
         </Offcanvas.Header>
         <Offcanvas.Body>
 
-          {cart.length === 0
+          {/* {cart.length === 0
             ? <>
-              <h6 className='texts empty-cart'>:c estoy vacío, ¡lléname de productos!</h6>
+              <h6 className='texts empty-cart'>estoy vacío, ¡lléname de productos!</h6>
               <Link to="products" className='link-router'>ver productos</Link>
             </>
             : cart.map((item) => {
@@ -57,6 +59,10 @@ function Cart() {
           }
           <h5 className='texts cart-total-price'> total: ${getTotalCartPrice()}</h5>
           <h6 onClick={() => clearCart()} className="clear-cart">vaciar carrito</h6>
+          {btnOrderCheckout} */}
+
+
+          <CartBody cart={cart} baseUrl={baseUrl} getTotalCartPrice={getTotalCartPrice} deleteProduct={deleteProduct} clearCart={clearCart} />
         </Offcanvas.Body>
       </Offcanvas>
     </>

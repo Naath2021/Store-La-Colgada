@@ -10,6 +10,7 @@ import Faq from './components/pages/faq/Faq';
 import CategoryContainer from './components/products/categories/CategoryContainer';
 import Footer from './components/footer/Footer';
 import CartInfoProvider from './context/CartInfoProvider';
+import OrderCheckout from './components/cart/orderCheckout/OrderCheckout';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="products/category/:category" element={<CategoryContainer />} />
           <Route path='login' element={<Login />} />
           <Route path='preguntas-frecuentes' element={<Faq />} />
+          <Route path='checkout' element={<OrderCheckout />} />
         </Routes>
         <Footer />
       </BrowserRouter>

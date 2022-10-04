@@ -1,8 +1,8 @@
 import { faGlobe, faHandSparkles, faTruck } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import db from "../../..";
-import { getDocs, collection } from 'firebase/firestore';
+// import db from "../../..";
+// import { getDocs, collection } from 'firebase/firestore';
 import Category1 from "../../../assets/image/backgrounds/home.png"
 import Category2 from "../../../assets/image/backgrounds/home.png"
 import Category3 from "../../../assets/image/backgrounds/home.png"
@@ -18,7 +18,6 @@ const Home = () => {
                 <div className="welcoming ">
                     <h1 className="titles-web welcoming-title">manufactura estimulante de objetos únicos...</h1>
                 </div>
-
                 <div className="description" >
                     <div className="text-container b-radius">
                         <h2 className="texts">la colgada es sensibilidad artística comprometida con explorar la noble manufactura y su trascender en objetos cotidianos.</h2>
