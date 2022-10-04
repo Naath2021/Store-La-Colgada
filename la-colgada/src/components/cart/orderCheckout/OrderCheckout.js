@@ -91,9 +91,9 @@ const OrderCheckout = ({ task }) => {
             </div>
             <div className="order-items-container">
                 <img src="" alt="" />
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
+                <h4>nombre de producto</h4>
+                <h5>precio total de los agregados</h5>
+                <h6>cantidad de agregados</h6>
             </div>
         </>
     )
