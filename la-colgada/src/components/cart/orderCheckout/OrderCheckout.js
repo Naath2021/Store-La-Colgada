@@ -1,64 +1,15 @@
-import { useContext, useState, props } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext'
-import { collection, addDoc } from 'firebase/firestore'
-import db from '../../..'
-import moment from "moment"
-import CartBody from '../CartBody'
+import { Popup } from 'semantic-ui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 
-const OrderCheckout = ({ task }) => {
+const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
     const baseUrl = "/img/"
 
-    const { cart, deleteProduct, clearCart, getTotalCartPrice } = useContext(CartContext);
-
-    const order = {
-        buyer: {
-            fullName: "",
-            email: "",
-            phoneNumber: 0
-        },
-        deliveryAddress: {
-            street: "",
-            buildingNumber: 0,
-            floorAndApartment: "",
-            neighborhood: "",
-            postalCode: 0,
-            city: ""
-        },
-        buyerDocument: 0,
-        items: cart,
-        total: cart.reduce((acc, total) => acc + (total.product.price * total.qty), 0),
-        date: moment().format()
-    }
-
-    const [orderInfo, setOrderInfo] = useState(order);
-    console.log(orderInfo)
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(orderInfo)
-    }
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target
-        setOrderInfo({ ...orderInfo, [name]: value })
-        console.log(orderInfo)
-    }
-
-
-    const createOrder = () => {
-        const ordersCollection = collection(db, "orders")
-        addDoc(ordersCollection, order)
-            .then(({ id }) => {
-                alert("muchas gracias por tu compra");
-                console.log(id)
-            }).catch((err) => {
-                alert("compra no finalizada, intenta de nuevo");
-                console.log(err)
-            })
-    }
-
+    const { cart, deleteProduct, getTotalCartPrice } = useContext(CartContext);
+    console.log(cart)
     return (
         <>
             <div className="total-order-container">
@@ -83,18 +34,28 @@ const OrderCheckout = ({ task }) => {
                             <label className='form-label'>datos de facturación</label>
                             <input onChange={handleInputChange} name='buyerDocument' type="number" placeholder='DNI del comprador' />
                         </div>
-                        <button className="ui button" type="submit">finalizar la compra</button>
+                        <button onClick={createOrder} className="ui button" type="submit">finalizar la compra</button>
                     </form>
                 </div>
                 <div className="cart-resume-container">
                 </div>
             </div>
-            <div className="order-items-container">
-                <img src="" alt="" />
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
-            </div>
+            {cart.map((item) => {
+                return <div key={item.product.id} className="order-items-container">
+                    <div className="checkout-cart-img-container">
+                        <img src={baseUrl + item.product.image1} alt={item.product.name} className="checkout-item-img b-radius-5" />
+                    </div>
+                    <div className='checkout-cart-item-info-container'>
+                        <button onClick={() => deleteProduct(item)} className="delete-product-btn"><Popup content='Eliminar producto' trigger={<FontAwesomeIcon icon={faXmark} />} /></button>
+                        <h2 className='texts checkout-cart-item-name'>{item.product.name}</h2>
+                        <h6 className="texts checkout-cart-item-price">{item.qty} x ${item.productTotalPrice}</h6>
+                    </div>
+                    <div className="total-purchase">
+                        <h2>total: ${getTotalCartPrice()}</h2>
+                    </div>
+                </div>
+            })
+            }
         </>
     )
 }
