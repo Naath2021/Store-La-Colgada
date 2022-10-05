@@ -1,20 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CartContext } from "./CartContext";
-// import db from "..";
-// import { getDoc, doc } from "firebase/firestore";
 
 
 const CartInfoProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
-
-    // const cartQuery = doc(db, "products")
-    // useEffect(() => {
-    //     getDoc(cartQuery).then(res => {
-    //         setCart(res.data())
-    //     }).catch(err => console.log(err))
-    // })
-
-
 
     const addToCart = (product, qty, productTotalPrice) => {
         if (alreadyInCart(product.id)) {

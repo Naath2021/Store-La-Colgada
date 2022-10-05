@@ -1,0 +1,14 @@
+.total-order-container{
+    @include flex-row;
+    width: 80%;
+    .form-container{
+        min-height: 100vh;
+        @include flex-column;
+        .input-container{
+            margin: 5vh 0;
+        }
+        .form-label{
+            font-size: 1vw;
+        }
+    }
+}

@@ -32,10 +32,11 @@
       align-items: flex-end;
       justify-content: space-between;
       padding: 1vw;
+      width: 10vw;
       .cart-item-name {
-        width: 15vw;
         font-size: 0.9vw;
         padding: 1.5vh 0;
+        width: fit-content;
       }
       .cart-item-price {
         font-size: 0.8vw;
@@ -44,7 +45,7 @@
   }
 }
 
-.cart-total-price{
+.cart-total-price {
   text-align: right;
   margin: 15vh 0 1vh 0;
   font-weight: 600;
