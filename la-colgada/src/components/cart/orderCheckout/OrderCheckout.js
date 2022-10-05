@@ -1,63 +1,11 @@
-import { useContext, useState, props } from 'react'
-import { CartContext } from '../../../context/CartContext'
-import { collection, addDoc } from 'firebase/firestore'
-import db from '../../..'
-import moment from "moment"
-import CartBody from '../CartBody'
+// import { useContext } from 'react'
+// import { CartContext } from '../../../context/CartContext'
 
 
-const OrderCheckout = ({ task }) => {
-    const baseUrl = "/img/"
+const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
+    // const baseUrl = "/img/"
 
-    const { cart, deleteProduct, clearCart, getTotalCartPrice } = useContext(CartContext);
-
-    const order = {
-        buyer: {
-            fullName: "",
-            email: "",
-            phoneNumber: 0
-        },
-        deliveryAddress: {
-            street: "",
-            buildingNumber: 0,
-            floorAndApartment: "",
-            neighborhood: "",
-            postalCode: 0,
-            city: ""
-        },
-        buyerDocument: 0,
-        items: cart,
-        total: cart.reduce((acc, total) => acc + (total.product.price * total.qty), 0),
-        date: moment().format()
-    }
-
-    const [orderInfo, setOrderInfo] = useState(order);
-    console.log(orderInfo)
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(orderInfo)
-    }
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target
-        setOrderInfo({ ...orderInfo, [name]: value })
-        console.log(orderInfo)
-    }
-
-
-    const createOrder = () => {
-        const ordersCollection = collection(db, "orders")
-        addDoc(ordersCollection, order)
-            .then(({ id }) => {
-                alert("muchas gracias por tu compra");
-                console.log(id)
-            }).catch((err) => {
-                alert("compra no finalizada, intenta de nuevo");
-                console.log(err)
-            })
-    }
+    // const { cart } = useContext(CartContext);
 
     return (
         <>
@@ -83,7 +31,7 @@ const OrderCheckout = ({ task }) => {
                             <label className='form-label'>datos de facturación</label>
                             <input onChange={handleInputChange} name='buyerDocument' type="number" placeholder='DNI del comprador' />
                         </div>
-                        <button className="ui button" type="submit">finalizar la compra</button>
+                        <button onClick={createOrder} className="ui button" type="submit">finalizar la compra</button>
                     </form>
                 </div>
                 <div className="cart-resume-container">

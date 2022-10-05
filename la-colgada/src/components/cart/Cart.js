@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-// import { Popup } from 'semantic-ui-react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import CartWidget from './CartWidget';
-// import { Link } from 'react-router-dom';
-// import { btnOrderCheckout } from '../buttons/Buttons';
 import CartBody from './CartBody';
-import OrderCheckout from './orderCheckout/OrderCheckout';
 
 
 
