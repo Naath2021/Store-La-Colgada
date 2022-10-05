@@ -1,12 +1,15 @@
-// import { useContext } from 'react'
-// import { CartContext } from '../../../context/CartContext'
+import { useContext } from 'react'
+import { CartContext } from '../../../context/CartContext'
+import { Popup } from 'semantic-ui-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 
 const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
-    // const baseUrl = "/img/"
+    const baseUrl = "/img/"
 
-    // const { cart } = useContext(CartContext);
-
+    const { cart, deleteProduct, getTotalCartPrice } = useContext(CartContext);
+    console.log(cart)
     return (
         <>
             <div className="total-order-container">
@@ -37,12 +40,22 @@ const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
                 <div className="cart-resume-container">
                 </div>
             </div>
-            <div className="order-items-container">
-                <img src="" alt="" />
-                <h4>nombre de producto</h4>
-                <h5>precio total de los agregados</h5>
-                <h6>cantidad de agregados</h6>
-            </div>
+            {cart.map((item) => {
+                return <div key={item.product.id} className="order-items-container">
+                    <div className="checkout-cart-img-container">
+                        <img src={baseUrl + item.product.image1} alt={item.product.name} className="checkout-item-img b-radius-5" />
+                    </div>
+                    <div className='checkout-cart-item-info-container'>
+                        <button onClick={() => deleteProduct(item)} className="delete-product-btn"><Popup content='Eliminar producto' trigger={<FontAwesomeIcon icon={faXmark} />} /></button>
+                        <h2 className='texts checkout-cart-item-name'>{item.product.name}</h2>
+                        <h6 className="texts checkout-cart-item-price">{item.qty} x ${item.productTotalPrice}</h6>
+                    </div>
+                    <div className="total-purchase">
+                        <h2>total: ${getTotalCartPrice()}</h2>
+                    </div>
+                </div>
+            })
+            }
         </>
     )
 }

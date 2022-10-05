@@ -3,12 +3,19 @@
     width: 80%;
     .form-container{
         min-height: 100vh;
+        width: 30vw;
         @include flex-column;
         .input-container{
             margin: 5vh 0;
         }
         .form-label{
             font-size: 1vw;
+        }
+    }
+    .order-items-container{
+        @include flex-row;
+        .checkout-item-img{
+            width: 10vw;
         }
     }
 }

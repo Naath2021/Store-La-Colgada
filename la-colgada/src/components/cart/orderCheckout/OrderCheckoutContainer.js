@@ -62,6 +62,8 @@ const OrderCheckoutContainer = () => {
         setOrderInfo(orderInfo)
         console.log(orderInfo)
     }
+
+    
     return (
         <OrderCheckout handleInputChange={handleInputChange} handleSubmit={handleSubmit} createOrder={createOrder} />
     )
