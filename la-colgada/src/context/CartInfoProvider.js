@@ -15,6 +15,8 @@ const CartInfoProvider = ({ children }) => {
         }
     }
 
+    const baseUrl = "/img/"
+
     const clearCart = () => setCart([]);
 
     const deleteProduct = (item) => {
@@ -37,7 +39,7 @@ const CartInfoProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, deleteProduct, clearCart, getTotalCartPrice }}>
+        <CartContext.Provider value={{ cart, addToCart, deleteProduct, clearCart, getTotalCartPrice, baseUrl }}>
             {children}
         </CartContext.Provider >
     )

@@ -39,7 +39,7 @@
         padding-top: 1vw;
       }
       .detail-desc {
-        font-size: .7vw;
+        font-size: 0.7vw;
         width: 15vw;
         text-align: center;
         padding-top: 20px;
@@ -67,6 +67,13 @@
         .category-img {
           width: 20vw;
         }
+        .category-name {
+          font-size: 0.9vw;
+          margin: 2vh 0;
+          &:hover {
+            font-size: 1vw;
+          }
+        }
       }
     }
   }
@@ -76,16 +83,16 @@
     height: 150vh;
     background-image: url("../../../assets/image/backgrounds/patt-brand-name.png");
     @include bg-fixed;
-    .text-container{
+    .text-container {
       @include flex-column;
       width: 60vw;
       height: 40vh;
       background-color: $bg-color-opacity;
-      .about-title{
+      .about-title {
         font-size: 3vw;
         padding-bottom: 1vw;
       }
-      .about-desc{
+      .about-desc {
         font-size: 1vw;
         width: 40vw;
         text-align: center;

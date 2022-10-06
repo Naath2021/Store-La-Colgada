@@ -1,15 +1,20 @@
 .card-container {
-  margin-top: 200px;
+  margin-top: 10vh;
   .card {
     background-color: $bg-color;
     @include flex-column;
-    width: 350px;
+    width: 15vw;
     margin: 30px;
+    &:hover {
+      color: $fonts !important;
+      box-shadow: 5px 4px 12px -6px $fonts;
+      transform: scale(1.2);
+    }
     .card-body {
       width: 100%;
       @include flex-column;
       .card-title {
-        font-size: 30px;
+        font-size: 1vw;
         font-weight: 600;
       }
       .card-img-top {
@@ -17,7 +22,7 @@
       }
       .card-price {
         padding-top: 10px;
-        font-size: 15px;
+        font-size: .8vw;
       }
     }
   }

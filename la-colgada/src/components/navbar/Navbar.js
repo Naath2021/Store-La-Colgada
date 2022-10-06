@@ -16,12 +16,12 @@ const Navbar = () => {
                     <li>
                         <Link to={"products"}><DropdownCategory/></Link>
                         <Link to={"preguntas-frecuentes"}>faq</Link>
-                        <Link to={"contact"}>contacto</Link>
+                        {/* <Link to={"contact"}>contacto</Link> */}
                     </li>
                 </ul>
             </div>
             <div className='icon-container'>
-                <Link to={"/login"}><FontAwesomeIcon icon={faUser} /> </Link>
+                {/* <Link to={"/login"}><FontAwesomeIcon icon={faUser} /> </Link> */}
                 <Cart/>
             </div>
         </div>

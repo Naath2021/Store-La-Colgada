@@ -1,63 +1,14 @@
-import { useContext, useState, props } from 'react'
+import { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../../context/CartContext'
-import { collection, addDoc } from 'firebase/firestore'
-import db from '../../..'
-import moment from "moment"
-import CartBody from '../CartBody'
+import CartItems from './cart-items/CartItems'
 
 
-const OrderCheckout = ({ task }) => {
-    const baseUrl = "/img/"
-
-    const { cart, deleteProduct, clearCart, getTotalCartPrice } = useContext(CartContext);
-
-    const order = {
-        buyer: {
-            fullName: "",
-            email: "",
-            phoneNumber: 0
-        },
-        deliveryAddress: {
-            street: "",
-            buildingNumber: 0,
-            floorAndApartment: "",
-            neighborhood: "",
-            postalCode: 0,
-            city: ""
-        },
-        buyerDocument: 0,
-        items: cart,
-        total: cart.reduce((acc, total) => acc + (total.product.price * total.qty), 0),
-        date: moment().format()
-    }
-
-    const [orderInfo, setOrderInfo] = useState(order);
-    console.log(orderInfo)
+const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(orderInfo)
-    }
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target
-        setOrderInfo({ ...orderInfo, [name]: value })
-        console.log(orderInfo)
-    }
-
-
-    const createOrder = () => {
-        const ordersCollection = collection(db, "orders")
-        addDoc(ordersCollection, order)
-            .then(({ id }) => {
-                alert("muchas gracias por tu compra");
-                console.log(id)
-            }).catch((err) => {
-                alert("compra no finalizada, intenta de nuevo");
-                console.log(err)
-            })
-    }
+    const { cart, getTotalCartPrice } = useContext(CartContext);
+    console.log(cart)
 
     return (
         <>
@@ -74,7 +25,7 @@ const OrderCheckout = ({ task }) => {
                             <label className='form-label'>dirección de entrega</label>
                             <input onChange={handleInputChange} name='street' type="text" placeholder='calle o avenida' />
                             <input onChange={handleInputChange} name='buildingNumber' type="number" placeholder='altura' />
-                            <input onChange={handleInputChange} name='floorAndApartment' type="text" placeholder='timbre' />
+                            <input onChange={handleInputChange} name='floorAndApartment' type="text" placeholder='timbre(piso y apartamento)' />
                             <input onChange={handleInputChange} name='neighborhood' type="text" placeholder='barrio' />
                             <input onChange={handleInputChange} name='postalCode' type="number" placeholder='código postal' />
                             <input onChange={handleInputChange} name='city' type="text" placeholder='ciudad' />
@@ -83,17 +34,26 @@ const OrderCheckout = ({ task }) => {
                             <label className='form-label'>datos de facturación</label>
                             <input onChange={handleInputChange} name='buyerDocument' type="number" placeholder='DNI del comprador' />
                         </div>
-                        <button className="ui button" type="submit">finalizar la compra</button>
+                        <button onClick={createOrder} className="ui button" type="submit">finalizar la compra</button>
                     </form>
                 </div>
-                <div className="cart-resume-container">
+                <div className="checkout-items">
+
+                    {
+                        cart.length === 0
+                            ? <>
+                                <div className="checkout-empty-cart-notif">
+                                    <h6 className='texts  empty-cart-checkout'>No tienes items en tu carrito, ve a buscarloos</h6>
+                                    <Link to="../products" className='link-router checkout-to-contact b-radius-5'>¡vamos pues! </Link>
+                                </div>
+                            </>
+                            : <>
+                                <div className='checkout-items-container'><CartItems /></div>
+                            </>
+                    }
+
+                    <h2 className='texts total-price'>total: ${getTotalCartPrice()}</h2>
                 </div>
-            </div>
-            <div className="order-items-container">
-                <img src="" alt="" />
-                <h4></h4>
-                <h5></h5>
-                <h6></h6>
             </div>
         </>
     )

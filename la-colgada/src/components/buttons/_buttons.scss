@@ -37,15 +37,21 @@
   }
 }
 
-.dropdown-container {
+#dropdown-basic {
   @include flex-row;
   outline: none;
   border: none;
   background-color: transparent;
   color: $fonts;
-  transition: all 600ms;
+  &:hover {
+    font-size: 0.9vw;
+  }
+  .dropdown-menu.show{
+    width: 15vw;
+  }
 }
 
-.delete-product-btn{
+.delete-product-btn {
   border: none;
 }
+

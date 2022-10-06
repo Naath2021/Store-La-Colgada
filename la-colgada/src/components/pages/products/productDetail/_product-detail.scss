@@ -1,5 +1,5 @@
 .carr-img {
-  width: 30vw;
+  width: 20vw;
   border-radius: 5px;
 }
 
@@ -10,16 +10,17 @@
   background-color: $bg-color;
   margin-top: 50px;
   .item-img {
-    width: 30vw;
+    width: 20vw;
   }
   .item-info {
     display: flex;
     flex-direction: column;
     margin-left: 50px;
-    width: 30vw;
+    width: 40vw;
     height: fit-content;
     .item-title {
-      font-size: 3vw;
+      font-size: 2vw;
+      font-weight: 600;
     }
     .item-price {
       font-size: 1vw;
@@ -29,20 +30,29 @@
     .item-desc {
       font-size: 1vw;
       padding-top: 20px;
+      width: 40vw;
     }
     .item-design-disclaimer {
-      font-size: .7vw;
+      font-size: .8vw;
       font-weight: 600;
       padding-top: 20px;
       letter-spacing: 3px;
+      width: 30vw;
     }
     .item-qty {
       padding-top: 30px;
       font-size: 1vw;
     }
     .btn-to-products {
-      font-size: 1vw;
-      padding: 1vw 0;
+      width: fit-content;
+      font-weight: 600;
+      font-size: .6vw;
+      margin-top: 1vh;
+      padding: 10px 15px;
+      &:hover{
+        background-color: $light-pink;
+        color: $fonts !important;
+      }
     }
   }
 }
