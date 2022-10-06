@@ -43,6 +43,11 @@
       padding-top: 30px;
       font-size: 1vw;
     }
+    .btn-container{
+      @include flex-row;
+      width: 25vw;
+      justify-content: space-between;
+    }
     .btn-to-products {
       width: fit-content;
       font-weight: 600;

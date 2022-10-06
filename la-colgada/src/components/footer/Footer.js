@@ -1,20 +1,22 @@
 import { Link } from "react-router-dom"
 import { SendForm } from "../buttons/Buttons"
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Footer = () => {
+    AOS.init();
     return (
         <div className="footer-container">
             <div className="footer-nav-container">
 
-                <div className="conect">
+                <div className="conect" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
                     <h2 className="texts section-title">conecta</h2>
                     <a href="https://www.instagram.com/la.colgada/">instagram</a>
                     <a href="https://es-la.facebook.com/">facebook</a>
                     <a href="https://www.tiktok.com/es/">tiktok</a>
                 </div>
 
-                <div className="explore">
+                <div className="explore" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
                     <h2 className="texts section-title">explora</h2>
                     <Link to={"/"} className="link-router">inicio</Link>
                     <Link to={"products"} className="link-router">productos</Link>
@@ -22,13 +24,13 @@ const Footer = () => {
                     <Link to={"contacto"} className="link-router">contacto</Link>
                 </div>
 
-                <div className="subscribe">
+                <div className="subscribe" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
                     <h2 className="texts section-title">suscríbete</h2>
                     <input type="email" className="footer-input link-router " placeholder="   e-mail <3"></input>
                     <SendForm />
                 </div>
 
-                <div className="contact">
+                <div className="contact" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="700">
                     <h2 className="texts section-title">contacto</h2>
                     <h3 className="texts">si@lacolgada.com.ar</h3>
                     <h3 className="texts">la.colgada.com.ar</h3>
@@ -38,7 +40,7 @@ const Footer = () => {
             </div>
 
             <div className="disclaimer">
-                <h4>&copy; Buenos Aires - Argentina 2022. | Todos los derechos reservados.</h4>
+                <h4 className="texts">&copy; Buenos Aires - Argentina 2022. | Todos los derechos reservados.</h4>
             </div>
 
         </div>

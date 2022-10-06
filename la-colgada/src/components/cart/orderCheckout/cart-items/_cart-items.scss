@@ -22,7 +22,6 @@
 .cart-body-container {
   background-color: none;
   @include flex-column;
-  width: 100%;
   .item-container {
     background-color: none;
     height: fit-content;
