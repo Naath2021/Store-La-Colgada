@@ -1,15 +1,15 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../../context/CartContext'
-import { Popup } from 'semantic-ui-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import CartItems from './cart-items/CartItems'
 
 
 const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
-    const baseUrl = "/img/"
 
-    const { cart, deleteProduct, getTotalCartPrice } = useContext(CartContext);
+
+    const { cart, getTotalCartPrice } = useContext(CartContext);
     console.log(cart)
+
     return (
         <>
             <div className="total-order-container">
@@ -25,7 +25,7 @@ const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
                             <label className='form-label'>dirección de entrega</label>
                             <input onChange={handleInputChange} name='street' type="text" placeholder='calle o avenida' />
                             <input onChange={handleInputChange} name='buildingNumber' type="number" placeholder='altura' />
-                            <input onChange={handleInputChange} name='floorAndApartment' type="text" placeholder='timbre' />
+                            <input onChange={handleInputChange} name='floorAndApartment' type="text" placeholder='timbre(piso y apartamento)' />
                             <input onChange={handleInputChange} name='neighborhood' type="text" placeholder='barrio' />
                             <input onChange={handleInputChange} name='postalCode' type="number" placeholder='código postal' />
                             <input onChange={handleInputChange} name='city' type="text" placeholder='ciudad' />
@@ -37,25 +37,24 @@ const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
                         <button onClick={createOrder} className="ui button" type="submit">finalizar la compra</button>
                     </form>
                 </div>
-                <div className="cart-resume-container">
+                <div className="checkout-items">
+
+                    {
+                        cart.length === 0
+                            ? <>
+                                <div className="checkout-empty-cart-notif">
+                                    <h6 className='texts  empty-cart-checkout'>No tienes items en tu carrito, ve a buscarloos</h6>
+                                    <Link to="../products" className='link-router checkout-to-contact b-radius-5'>¡vamos pues! </Link>
+                                </div>
+                            </>
+                            : <>
+                                <div className='checkout-items-container'><CartItems /></div>
+                            </>
+                    }
+
+                    <h2 className='texts total-price'>total: ${getTotalCartPrice()}</h2>
                 </div>
             </div>
-            {cart.map((item) => {
-                return <div key={item.product.id} className="order-items-container">
-                    <div className="checkout-cart-img-container">
-                        <img src={baseUrl + item.product.image1} alt={item.product.name} className="checkout-item-img b-radius-5" />
-                    </div>
-                    <div className='checkout-cart-item-info-container'>
-                        <button onClick={() => deleteProduct(item)} className="delete-product-btn"><Popup content='Eliminar producto' trigger={<FontAwesomeIcon icon={faXmark} />} /></button>
-                        <h2 className='texts checkout-cart-item-name'>{item.product.name}</h2>
-                        <h6 className="texts checkout-cart-item-price">{item.qty} x ${item.productTotalPrice}</h6>
-                    </div>
-                    <div className="total-purchase">
-                        <h2>total: ${getTotalCartPrice()}</h2>
-                    </div>
-                </div>
-            })
-            }
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/esm/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
@@ -8,11 +8,11 @@ import CartBody from './CartBody';
 
 
 
-const baseUrl = "/img/"
+
 
 function Cart() {
 
-  const { cart, deleteProduct, clearCart, getTotalCartPrice } = useContext(CartContext);
+  const { cart, deleteProduct, clearCart, getTotalCartPrice, baseUrl } = useContext(CartContext);
 
   // States propios del offcanvas
   const [show, setShow] = useState(false);
@@ -21,7 +21,7 @@ function Cart() {
 
   return (
     <>
-      <Button onClick={handleShow} className="cart-icon">
+      <Button onClick={handleShow} className="cart-icon" variant="link">
         <CartWidget />
       </Button>
 

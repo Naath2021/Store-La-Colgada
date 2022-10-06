@@ -11,7 +11,7 @@
   border-radius: 10px;
 }
 
-.b-radius-5{
+.b-radius-5 {
   border-radius: 5px;
 }
 .link-router {
@@ -20,4 +20,22 @@
   list-style: none;
   list-style-type: none;
   color: $fonts;
+  &:hover {
+    color: $fonts !important;
+  }
+}
+
+.cart-icon {
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  list-style-type: none;
+  color: $fonts;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 0 10px;
+  &:hover {
+    background-color: transparent;
+    color: $fonts;
+  }
 }

@@ -68,7 +68,7 @@ function ProductDetail({ item }) {
                         </Button.Content>
                     </Button>
 
-                    <Link to="../products" className='link-router btn-to-products'>¡sigue comprando!</Link>
+                    <Link to="../products" className='link-router btn-to-products b-radius-5'>¡sigue comprando!</Link>
                 </div>
             </div>
         </>
