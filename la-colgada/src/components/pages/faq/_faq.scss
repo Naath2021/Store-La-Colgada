@@ -45,7 +45,9 @@
         .faq-links {
           padding: 0 20px;
           margin: 0;
+          transition: all 600ms;
           &:hover {
+            transition: all 600ms;
             color: $salmon;
             font-size: 0.9vw;
           }

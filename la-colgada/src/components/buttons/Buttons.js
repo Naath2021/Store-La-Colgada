@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const SeeProduct = () => <Link to={"../products"}><Button type="submit" className='see-products link-router'>Ver Productos</Button></Link>
 
-const SendForm = () => <Button type='submit' className='send-form'>Enviar</Button>
+const SendForm = () => <Button type='submit' className='send-form texts'>Enviar</Button>
 
 function DropdownCategory() {
     return (
@@ -17,12 +17,12 @@ function DropdownCategory() {
                 <DropdownItem><Link to={"products/category/macetas"} >macetas</Link></DropdownItem>
                 <DropdownItem><Link to={"products/category/utensilios"} >utensilios</Link></DropdownItem>
                 <DropdownItem><Link to={"products/category/combos"} >combos</Link></DropdownItem>
-                <DropdownItem><Link to={"products"}>ver más</Link></DropdownItem>
+                <DropdownItem><Link to={"products"}>ver todo</Link></DropdownItem>
             </Dropdown.Menu>
         </Dropdown>
     );
 }
 
-const btnOrderCheckout = <Link to={"../checkout"}><Button type="submit" className='link-router checkout-btn' variant="link">iniciar compra</Button></Link>
+const btnOrderCheckout = <Link to={"../checkout"} className="checkout-btn"><Button type="submit" className='link-router '>iniciar compra</Button></Link>
 
 export { SeeProduct, SendForm, DropdownCategory, btnOrderCheckout }

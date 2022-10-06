@@ -37,7 +37,7 @@ const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
                         <button onClick={createOrder} className="ui button" type="submit">finalizar la compra</button>
                     </form>
                 </div>
-                <div className="checkout-items">
+                <div className="checkout-items-container">
 
                     {
                         cart.length === 0
@@ -48,11 +48,14 @@ const OrderCheckout = ({ handleInputChange, createOrder, handleSubmit }) => {
                                 </div>
                             </>
                             : <>
-                                <div className='checkout-items-container'><CartItems /></div>
+                                <div className='checkout-items'>
+                                    <div className="checkout-cart-items"><CartItems /></div>
+                                    <div className="checkout-total"><h2 className='texts checkout-total-price'>total: ${getTotalCartPrice()}</h2></div>
+                                </div>
+
                             </>
                     }
 
-                    <h2 className='texts total-price'>total: ${getTotalCartPrice()}</h2>
                 </div>
             </div>
         </>
