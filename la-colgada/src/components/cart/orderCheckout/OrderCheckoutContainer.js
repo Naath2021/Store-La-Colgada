@@ -2,7 +2,7 @@ import { useState, useContext } from "react"
 import { CartContext } from "../../../context/CartContext"
 import OrderCheckout from "./OrderCheckout"
 import { collection, addDoc } from 'firebase/firestore'
-import db from '../../..'
+import { firebaseDb } from "../../../firebase/FirebaseInitializer"
 import moment from "moment"
 
 const OrderCheckoutContainer = () => {
@@ -34,7 +34,7 @@ const OrderCheckoutContainer = () => {
     }
 
     const createOrder = () => {
-        const ordersCollection = collection(db, "orders")
+        const ordersCollection = collection(firebaseDb, "orders")
         addDoc(ordersCollection, orderInfo)
             .then(({ id }) => {
                 alert("muchas gracias por tu compra, tu número de orden es: " + id);

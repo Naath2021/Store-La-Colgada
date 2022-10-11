@@ -9,8 +9,8 @@
   height: 50px;
   .navbar-logo {
     width: 10vw;
-    &:hover{
-      width: 11vw
+    &:hover {
+      width: 11vw;
     }
   }
   .navbar-list-container {
@@ -23,11 +23,11 @@
           @include text-deco-none;
           letter-spacing: 5px;
           font-family: "Architects Daughter", cursive;
-          font-size: .8vw;
+          font-size: 0.8vw;
           color: $fonts;
           padding: 0 15px;
-          &:hover{
-            font-size: .9vw;
+          &:hover {
+            font-size: 0.9vw;
           }
         }
       }
@@ -41,5 +41,14 @@
       font-size: 1vw;
       color: $fonts;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    display: none;
+  }
+  .navbar-mobile-container{
+    display: block;
   }
 }

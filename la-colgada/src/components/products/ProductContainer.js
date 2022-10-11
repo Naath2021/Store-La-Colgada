@@ -1,14 +1,15 @@
 import { useEffect, useState, React } from "react"
 import ProductList from "./ProductList";
-import db from "../..";
+import { firebaseDb } from "../../firebase/FirebaseInitializer";
 import { getDocs, collection } from "firebase/firestore";
+import { getProductsInfo } from "../../firebase/DbFunctions";
 
 
 const ProductContainer = () => {
     const [productsInfo, setProductsInfo] = useState([]);
-    
+
     const getProductsInfo = () => {
-        const querySnapshot = collection(db, "products");
+        const querySnapshot = collection(firebaseDb, "products");
         getDocs(querySnapshot).then((res) => {
             const data = res.docs.map((product) => {
                 return { id: product.id, ...product.data() }

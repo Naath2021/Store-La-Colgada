@@ -24,11 +24,11 @@ const Footer = () => {
                     <Link to={"contacto"} className="link-router">contacto</Link>
                 </div>
 
-                <div className="subscribe" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                {/* <div className="subscribe" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
                     <h2 className="texts section-title">suscríbete</h2>
                     <input type="email" className="footer-input link-router " placeholder="   e-mail <3"></input>
                     <SendForm />
-                </div>
+                </div> */}
 
                 <div className="contact" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="700">
                     <h2 className="texts section-title">contacto</h2>

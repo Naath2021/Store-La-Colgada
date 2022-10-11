@@ -3,14 +3,14 @@ import React from 'react'
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import ProductDetail from './ProductDetail';
-import db from '../../../..';
+import { firebaseDb } from '../../../../firebase/FirebaseInitializer';
 import { doc, getDoc } from 'firebase/firestore';
 
 const ProductDetailContainer = () => {
 
     const { id } = useParams();
 
-    const queryDoc = doc(db, "products", id)
+    const queryDoc = doc(firebaseDb, "products", id)
 
     const [productInfo, setProductInfo] = useState();
 

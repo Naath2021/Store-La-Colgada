@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../../context/CartContext';
 
 const CartWidget = () => {
 

@@ -3,7 +3,7 @@
 @import "../../../la-colgada/src/scss/mixin";
 @import "../../../la-colgada/src/components/buttons/buttons",
   "../../../la-colgada/src/components/navbar/navbar",
-  "../../../la-colgada/src/components/cart/cart-widget",
+  "../../../la-colgada/src/components/cart/cart-widget/cart-widget",
   "../../../la-colgada/src/components/pages/home/home",
   "../../../la-colgada/src/components/pages/products/products",
   "../../../la-colgada/src/components/products/product-card/product-card",
@@ -16,4 +16,6 @@
   "../../../la-colgada/src/components/cart/cart",
   "../../../la-colgada/src/components/pages/faq/faq",
   "../../../la-colgada/src/components/cart/orderCheckout/order-checkout",
-  "../../../la-colgada/src/components/cart/orderCheckout/cart-items/cart-items";
+  "../../../la-colgada/src/components/cart/orderCheckout/cart-items/cart-items",
+  "../../../la-colgada/src/components/cart/cart-body/cart-body",
+  "../../../la-colgada/src/components/navbar/navbarMobile/navbar-mobile";
