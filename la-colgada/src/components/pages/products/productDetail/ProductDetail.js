@@ -7,8 +7,9 @@ import { useState, useContext } from 'react';
 import { CartContext } from '../../../../context/CartContext';
 import { Link } from 'react-router-dom';
 import { btnOrderCheckout } from '../../../buttons/Buttons';
+import { baseUrl } from '../../../../firebase/DbFunctions';
 
-const baseUrl = "/img/"
+
 
 function ProductDetail({ item }) {
 

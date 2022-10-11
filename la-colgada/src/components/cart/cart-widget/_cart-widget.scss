@@ -1,0 +1,20 @@
+.cart-items-container {
+  @include flex-row;
+  width: fit-content;
+  .cart-items-qty {
+    align-items: flex-end;
+    font-size: 1.5vw;
+    margin: 0;
+    padding-left: 5px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cart-items-container {
+    width: 5vw;
+    .cart-items-qty {
+      font-size: 3vw;
+    }
+  }
+}

@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/esm/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import CartWidget from './CartWidget';
-import CartBody from './CartBody';
+import CartWidget from "./cart-widget/CartWidget"
+import CartBody from './cart-body/CartBody';
 
 
 
@@ -12,7 +12,7 @@ import CartBody from './CartBody';
 
 function Cart() {
 
-  const { cart, deleteProduct, clearCart, getTotalCartPrice, baseUrl } = useContext(CartContext);
+  const { cart, clearCart, getTotalCartPrice } = useContext(CartContext);
 
   // States propios del offcanvas
   const [show, setShow] = useState(false);
@@ -30,7 +30,7 @@ function Cart() {
           <Offcanvas.Title>¡tu carrito!</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <CartBody cart={cart} baseUrl={baseUrl} getTotalCartPrice={getTotalCartPrice} deleteProduct={deleteProduct} clearCart={clearCart} />
+          <CartBody cart={cart} getTotalCartPrice={getTotalCartPrice} clearCart={clearCart} />
         </Offcanvas.Body>
       </Offcanvas>
     </>

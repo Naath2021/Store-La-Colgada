@@ -19,15 +19,15 @@
       }
     }
 
-    .subscribe {
-      @include flex-column;
-      .footer-input {
-        background-color: $bg-color;
-        height: 30px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-      }
-    }
+    // .subscribe {
+    //   @include flex-column;
+    //   .footer-input {
+    //     background-color: $bg-color;
+    //     height: 30px;
+    //     margin-bottom: 15px;
+    //     border-radius: 5px;
+    //   }
+    // }
   }
 
   .contact {

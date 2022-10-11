@@ -2,9 +2,11 @@
 import React from "react";
 import ProductsCard from "./product-card/ProductCard";
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ProductList = ({ list }) => {
+    AOS.init();
     return (
         <div className="product-container">
             {
